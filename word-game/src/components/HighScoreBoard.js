@@ -1,6 +1,5 @@
 
-export default function WelcomePage() {
-
+export default function HighScoreBoard() {
     return (
         <>
         </>
