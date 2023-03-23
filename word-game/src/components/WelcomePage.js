@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function WelcomePage() {
   const [name, setName] = useState('');
-  const history = useHistory();
+//   const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,7 +12,7 @@ function WelcomePage() {
     // You can also save the name to localStorage or a cookie if you want to persist it
     setName(event.target.name.value);
     // Navigate to the game/quiz page
-    history.push('/game');
+    // history.push('/game');
   };
 
   return (
@@ -22,8 +23,8 @@ function WelcomePage() {
           Please enter your name:
           <input type="text" name="name" />
         </label>
-        <button type="submit">Start the Game/Quiz</button>
-      </form>
+        <Link to="settings"><button type="submit">Continue to Game</button></Link>
+          </form>
     </div>
   );
 }

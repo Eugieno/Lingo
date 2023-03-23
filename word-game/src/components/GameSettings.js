@@ -1,6 +1,7 @@
 import 'bulma/css/bulma.min.css';
+import { Link } from "react-router-dom";
 
-function GameSettings ({testType, difficulty, numOfQuestions, onSelectChange, onFormsubmit }) {
+function GameSettings ({testType, difficulty, numOfQuestions, onFormFieldChange, onFormsubmit }) {
 
     return (
         <>
@@ -13,7 +14,7 @@ function GameSettings ({testType, difficulty, numOfQuestions, onSelectChange, on
                   <select
                   value={numOfQuestions}
                   name =""
-                  onChange={onSelectChange}
+                  onChange={onFormFieldChange}
                   type = ""
                   placeholder='' >
                     <option>10</option>
@@ -31,7 +32,7 @@ function GameSettings ({testType, difficulty, numOfQuestions, onSelectChange, on
                   <select
                     value={testType}
                     name =""
-                    onChange={onSelectChange}
+                    onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
                     <option>TOEFL</option>
@@ -49,7 +50,7 @@ function GameSettings ({testType, difficulty, numOfQuestions, onSelectChange, on
                   <select
                     value={difficulty}
                     name =""
-                    onChange={onSelectChange}
+                    onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
                     <option>Easy</option>
@@ -62,7 +63,7 @@ function GameSettings ({testType, difficulty, numOfQuestions, onSelectChange, on
 
             <div class="field is-grouped">
               <div class="control">
-                <button onClick={onFormsubmit} class="button is-link">Start Quiz</button>
+                <Link to ="questions"><button onClick={onFormsubmit} class="button is-link">Start Quiz</button></Link>
               </div>
             </div>
             </div>
