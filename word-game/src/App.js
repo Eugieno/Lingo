@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import 'bulma/css/bulma.min.css';
 import GameSettings from './components/GameSettings';
 import WelcomePage from './components/WelcomePage';
@@ -9,25 +9,36 @@ import DisplayScore from './components/DisplayScore';
 
 
 const App = () => {
-  const [username, SetUsername] = useState('');
+  // const [username, SetUsername] = useState('');
   const [formData, setFormData] = useState({
     testType: "",
-    difficulty: 0,
-    numOfQuestion: 0
+    difficulty: "",
+    numOfQuestion: ""
   });
+console.log(formData.difficulty)
+console.log(formData.numOfQuestion)
+console.log(formData.testType)
 
-  // 3. Final score ( to be logged to LS)
-  const [score, setScore] = useState();
+ const handleFormFieldChange = (e) => {
+   
+    let {name, value} = e.target;
+    const newFormData = {...formData, [name]:value}
+    setFormData(newFormData)
+ }
 
-  //Pass props to the child components
+ 
+//  useEffect(() => {
+//   console.log("Value of Selected diificulty in State is: "+ formData.testType);
+// }, [formData.testType,formData.numOfQuestion,formData.difficulty]);
 
       return (
         <Router>
         <>
         <Routes>
           <Route path= "/" element={<WelcomePage/>}/>
-          <Route path= "settings" element={<GameSettings/>}/>
-          <Route path = "questions" element = {<RenderQuestions/>}/>
+          <Route path= "settings/" element={<GameSettings onFormFieldChange={handleFormFieldChange}/>}/>
+          <Route path = "questions" element={<RenderQuestions difficulty={formData.difficulty} typeOfTest={formData.testType} numOfQuest={formData.numOfQuestion}/>}/>
+          {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
           {/* <Route path = "highscoreBoard" element = {<HighScoreBoard/>}/> */}
 
         </Routes>

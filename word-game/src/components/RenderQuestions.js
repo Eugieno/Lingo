@@ -19,7 +19,16 @@
 // construct a function component
 // import useState
 
-export default function RenderQuestions () {
+export default function RenderQuestions ({difficulty,numOfQuest,typeOfTest}) {
     
+
+
+    return (
+        <>
+        <p>Difficulty: </p>
+        <p>Type of test: </p>
+        <p>Number of quetion:</p>
+        </>
+    )
 }
 

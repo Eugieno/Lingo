@@ -1,25 +1,25 @@
 import 'bulma/css/bulma.min.css';
 import { Link } from "react-router-dom";
 
-function GameSettings ({testType, difficulty, numOfQuestions, onFormFieldChange, onFormsubmit }) {
+function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit }) {
 
     return (
         <>
         <form className="form">
           <div className = "">
-            <div class="field">
+            <div className="field">
               <label class="label">Number of questions</label>
               <div class="control">
                 <div class="select">
                   <select
-                  value={numOfQuestions}
-                  name =""
+                  value={numOfQuestion}
+                  name ="numOfQuestion"
                   onChange={onFormFieldChange}
                   type = ""
                   placeholder='' >
-                    <option>10</option>
-                    <option>15</option>
-                    <option>20</option>
+                    <option value="10">10</option>
+                    <option value= "15">15</option>
+                    <option value = "20">20</option>
                   </select>
                 </div>
               </div>
@@ -31,13 +31,13 @@ function GameSettings ({testType, difficulty, numOfQuestions, onFormFieldChange,
                 <div class="select">
                   <select
                     value={testType}
-                    name =""
+                    name ="testType"
                     onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
-                    <option>TOEFL</option>
-                    <option>GMAT</option>
-                    <option>GMAT</option>
+                    <option value="TOEFL">TOEFL</option>
+                    <option value = "GMAT">GMAT</option>
+                    <option value= "GRE">GRE</option>
                   </select>
                 </div>
               </div>
@@ -49,13 +49,13 @@ function GameSettings ({testType, difficulty, numOfQuestions, onFormFieldChange,
                 <div class="select">
                   <select
                     value={difficulty}
-                    name =""
+                    name ="difficulty"
                     onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
-                    <option>Easy</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
+                    <option value = "easy" >Easy</option>
+                    <option value = "medium">Medium</option>
+                    <option value = "hard">Hard</option>
                   </select>
                 </div>
               </div>
@@ -63,15 +63,11 @@ function GameSettings ({testType, difficulty, numOfQuestions, onFormFieldChange,
 
             <div class="field is-grouped">
               <div class="control">
-                <Link to ="questions"><button onClick={onFormsubmit} class="button is-link">Start Quiz</button></Link>
+                <Link to ="questions"><button  class="button is-link">Start Quiz</button></Link>
               </div>
             </div>
             </div>
         </form>
-
-
-
-        
         </>
     )
 
