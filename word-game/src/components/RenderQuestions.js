@@ -1,3 +1,27 @@
+import TimeBoundQuiz from "./TimeBoundQuiz";
+import TimelessQUiz from "./TimelessQuiz";
+
+export default function RenderQuestions ({APIresponse,timed}) {
+
+    const questionBank = {APIresponse};
+      
+
+    
+    return (
+        <>
+            {timed? <TimeBoundQuiz resObject={questionBank} />:<TimelessQUiz resObject={questionBank}/>}
+        </>
+    )
+}
+
+
+
+
+
+
+
+
+
 // Task/Features - To create a component that renders MCQ. 
 // This component will send API request to Word Quiz API, and the questions and corressponding choices returned within JSX tags.
 
@@ -18,17 +42,3 @@
 // PSEUDOCODES
 // construct a function component
 // import useState
-
-export default function RenderQuestions ({difficulty,numOfQuest,typeOfTest}) {
-    
-
-
-    return (
-        <>
-        <p>Difficulty: </p>
-        <p>Type of test: </p>
-        <p>Number of quetion:</p>
-        </>
-    )
-}
-

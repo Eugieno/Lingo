@@ -15,6 +15,9 @@ const App = () => {
     difficulty: "",
     numOfQuestion: ""
   });
+  const [objResponse, setObj] = useState({})
+  const [isTimed, setIsTimed] = useState(true)
+
 console.log(formData.difficulty)
 console.log(formData.numOfQuestion)
 console.log(formData.testType)
@@ -24,6 +27,17 @@ console.log(formData.testType)
     let {name, value} = e.target;
     const newFormData = {...formData, [name]:value}
     setFormData(newFormData)
+ }
+
+ const handleStartQuiz = () => {
+  // Get object response from API
+  // Update app component with this response 
+ }
+
+ const handleTimerUpdate = (e) => {
+  const newIsTimed = e.target.value;
+  setIsTimed(newIsTimed);
+
  }
 
  
@@ -36,8 +50,8 @@ console.log(formData.testType)
         <>
         <Routes>
           <Route path= "/" element={<WelcomePage/>}/>
-          <Route path= "settings/" element={<GameSettings onFormFieldChange={handleFormFieldChange}/>}/>
-          <Route path = "questions" element={<RenderQuestions difficulty={formData.difficulty} typeOfTest={formData.testType} numOfQuest={formData.numOfQuestion}/>}/>
+          <Route path= "settings/" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
+          <Route path = "questions" element={<RenderQuestions APIresponse ={objResponse} timed={isTimed} />}/>
           {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
           {/* <Route path = "highscoreBoard" element = {<HighScoreBoard/>}/> */}
 

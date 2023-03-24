@@ -1,7 +1,7 @@
 import 'bulma/css/bulma.min.css';
 import { Link } from "react-router-dom";
 
-function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit }) {
+function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit, onQuizStart,onTimerOption }) {
 
     return (
         <>
@@ -61,12 +61,26 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
               </div>
             </div>
 
+
+            <div class="control">
+            <p>Do you want a timed Quiz?</p>
+              <label class="radio">
+                <input onChange={onTimerOption} type="radio" name="answer"/>
+                Yes
+              </label>
+              <label class="radio">
+                <input onChange={onTimerOption} type="radio" name="answer"/>
+                No
+              </label>
+            </div>
+
             <div class="field is-grouped">
               <div class="control">
-                <Link to ="questions"><button  class="button is-link">Start Quiz</button></Link>
+                <Link to ="questions"><button onClick={onQuizStart} class="button is-link">Start Quiz</button></Link>
               </div>
             </div>
             </div>
+
         </form>
         </>
     )
@@ -74,3 +88,5 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
 }
 
 export default GameSettings;
+
+
