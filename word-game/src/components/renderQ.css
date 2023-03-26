@@ -1,0 +1,74 @@
+.question-card {
+    background-color: grey!important;
+    border-radius: 16px;
+    padding: 16px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    color: white;
+    box-shadow: rgba;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,rgba(0, 0, 0, 0.23)0px 18px 36px --18px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: darkgray;
+    padding: 16px;
+    border: 3px solid white;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.question-text {
+    color: darkblue;
+    font-size: 24px;
+}
+
+.final-result {
+    background-color: grey!important;
+    border-radius: 16px;
+    padding: 16px;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    color: white;
+    box-shadow: rgba;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,rgba(0, 0, 0, 0.23)0px 18px 36px --18px;
+
+}
+
+.restart-game {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 24px;
+    margin: 0 auto;
+
+}
+
+
+ h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    }
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+  

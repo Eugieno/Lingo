@@ -1,5 +1,7 @@
 import 'bulma/css/bulma.min.css';
-import { Link } from "react-router-dom";
+import { Link,} from "react-router-dom";
+import getRandomIntInclusive from './randomNumbergen';
+
 
 function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit, onQuizStart,onTimerOption }) {
 
@@ -35,9 +37,11 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                     onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
-                    <option value="TOEFL">TOEFL</option>
-                    <option value = "GMAT">GMAT</option>
-                    <option value= "GRE">GRE</option>
+                    <option value="toefl">TOEFL</option>
+                    <option value = "gmat">GMAT</option>
+                    <option value= "sat">SAT</option>
+                    <option value= "overall">Combined</option>
+                    <option value= "ielts">IELTS</option>
                   </select>
                 </div>
               </div>
@@ -53,9 +57,9 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                     onChange={onFormFieldChange}
                     type = ""
                     placeholder='' >
-                    <option value = "easy" >Easy</option>
-                    <option value = "medium">Medium</option>
-                    <option value = "hard">Hard</option>
+                    <option value = {getRandomIntInclusive(1,4)} >Easy</option>
+                    <option value = {getRandomIntInclusive(5,7)}>Medium</option>
+                    <option value = {getRandomIntInclusive(8,10)}>Hard</option>
                   </select>
                 </div>
               </div>
@@ -65,19 +69,22 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
             <div class="control">
             <p>Do you want a timed Quiz?</p>
               <label class="radio">
-                <input onChange={onTimerOption} type="radio" name="answer"/>
+                <input onChange={onTimerOption} type="radio" name="time-option" value={true}/>
                 Yes
               </label>
               <label class="radio">
-                <input onChange={onTimerOption} type="radio" name="answer"/>
+                <input onChange={onTimerOption} type="radio" name="time-option" value= {false}/>
                 No
               </label>
             </div>
 
             <div class="field is-grouped">
               <div class="control">
-                <Link to ="questions"><button onClick={onQuizStart} class="button is-link">Start Quiz</button></Link>
+                <Link to ="questions"><button onClick={onQuizStart} class="button is-link">Start Quiz</button>
+                </Link>
+                
               </div>
+              
             </div>
             </div>
 

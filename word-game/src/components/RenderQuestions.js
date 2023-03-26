@@ -1,16 +1,23 @@
 import TimeBoundQuiz from "./TimeBoundQuiz";
-import TimelessQUiz from "./TimelessQuiz";
+import TimelessQuiz from "./TimelessQuiz";
+import { useState } from "react";
+import "./renderQ.css";
 
-export default function RenderQuestions ({APIresponse,timed}) {
 
+
+
+export default function RenderQuestions ({diff, testArea, APIresponse,timed}) {
+    // const [questionBank, setQuestBank] = useState(APIresponse);
     const questionBank = {APIresponse};
+    console.log(questionBank)
       
-
-    
     return (
-        <>
-            {timed? <TimeBoundQuiz resObject={questionBank} />:<TimelessQUiz resObject={questionBank}/>}
-        </>
+        <div>
+            
+            {/* <TimelessQuiz resObject={questionBank}/> */}
+            {/* {timed? <TimeBoundQuiz resObject={questionBank} />:<TimelessQUiz resObject={questionBank}/>} */}
+            {/* <h1>Hello World</h1> */}
+        </div>
     )
 }
 
