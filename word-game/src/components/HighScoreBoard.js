@@ -1,3 +1,11 @@
+export default function DisplayScore () {
+    return (
+        <>
+        </>
+    )
+}
+
+
 // import 'bulma/css/bulma.min.css';
 // import { useEffect, useState } from 'react';
 
