@@ -68,48 +68,48 @@ export default HighScoreBoard;
 
 
 
-/*function HighScoreBoard({ users, userName }) {
-  const sortedUsers = [...users].sort((a, b) => b.score - a.score);
-  return (
-    <section className="section">
-      <div className="container">
-        <h1 className="title">High Scores - {userName}</h1>
-        <ol className="list is-hoverable">
-          {sortedUsers.map((user) => (
-            <li className="list-item" key={user.id}>
-              {user.name}: {user.score}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  );
-}
+// function HighScoreBoard({ users, userName }) {
+//   const sortedUsers = [...users].sort((a, b) => b.score - a.score);
+//   return (
+//     <section className="section">
+//       <div className="container">
+//         <h1 className="title">High Scores - {userName}</h1>
+//         <ol className="list is-hoverable">
+//           {sortedUsers.map((user) => (
+//             <li className="list-item" key={user.id}>
+//               {user.name}: {user.score}
+//             </li>
+//           ))}
+//         </ol>
+//       </div>
+//     </section>
+//   );
+// }
 
-function printHighscores() {
-  // getting score from highscores logic.js location
-  let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-  // sorting scores by decending order
-  highscores.sort(function (a, b) {
-    return b.score - a.score;
-  });
+// function printHighscores() {
+//   // getting score from highscores logic.js location
+//   let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+//   // sorting scores by decending order
+//   highscores.sort(function (a, b) {
+//     return b.score - a.score;
+//   });
 
-  highscores.forEach(function (score) {
-    // creat li tag for the score and user name
-    let liTag = document.createElement("li");
-    liTag.textContent = score.initials + " - " + score.score;
+//   highscores.forEach(function (score) {
+//     // creat li tag for the score and user name
+//     let liTag = document.createElement("li");
+//     liTag.textContent = score.initials + " - " + score.score;
 
-    // display the order list in highscores div
-    var olEl = document.getElementById("highscores");
-    olEl.appendChild(liTag);
-  });
-}
-// for clearing function to remove the scores
-function clearHighscores() {
-  window.localStorage.removeItem("highscores");
-  window.location.reload();
-}
+//     // display the order list in highscores div
+//     var olEl = document.getElementById("highscores");
+//     olEl.appendChild(liTag);
+//   });
+// }
+// // for clearing function to remove the scores
+// function clearHighscores() {
+//   window.localStorage.removeItem("highscores");
+//   window.location.reload();
+// }
 
-document.getElementById("clear").onclick = clearHighscores;
-// for when page loads
-printHighscores();
+// document.getElementById("clear").onclick = clearHighscores;
+// // for when page loads
+// printHighscores();
