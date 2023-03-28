@@ -13,7 +13,7 @@ import DisplayScore from './components/DisplayScore';
 
 
 const App = () => {
-  // const [username, SetUsername] = useState('');
+
 //  Monitoring variables from the game settings
   const [formData, setFormData] = useState({
     testType: "overall",
@@ -21,7 +21,7 @@ const App = () => {
     numOfQuestion: ""
   });
   // To manage API object returned 
-  const [objResponse, setObjResponse] = useState({});
+  const [objResponse, setObjResponse] = useState([]);
   
   // To manage user's choice of test (timed or not timed)
   const [isTimed, setIsTimed] = useState(true);
@@ -51,31 +51,31 @@ console.log(formData.testType)
 //  Triggers API call - on click of start quiz button in game settings component
 
 // Example of useEffect
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   doRequest(formData.difficulty, formData.testType).then(data => {
-  //     console.log(data) 
-  //     setObjResponse(prevObj => ({...prevObj,...data}))        
-  //     console.log(objResponse)  
-  //   })},[])
+    doRequest(formData.difficulty, formData.testType).then(data => {
+      console.log(data) 
+      setObjResponse(data.quizlist)        
+      console.log(objResponse)  
+    })},[])
 
 // Real Call of API - Example of event handler
-//  const handleStartQuiz = () => {
+ const handleStartQuiz = () => {
     
-//     doRequest(formData.difficulty, formData.testType).then(data => {
-//       console.log(data) // Log to console: success
-//       // let clonedData = Object.assign({}, data); // Log to console: success
-//       // update objrResponse state
+    doRequest(formData.difficulty, formData.testType).then(data => {
+      console.log(data) // Log to console: success
+      // let clonedData = Object.assign({}, data); // Log to console: success
+      // update objrResponse state
      
       
-//       setObjResponse(prevObj => ({...prevObj,...data}))
-//       // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
+      setObjResponse(data.quizlist)
+      // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
     
-//       console.log(objResponse)  // returns an object with an empty quizlist array. Simply logs the default state.
+      
 
       
-//     })
-//   }
+    })
+  }
   // const handleUpdateAPI = ()=> {
   //   doRequest().then(data => {
   //     console.log(data)
@@ -85,50 +85,53 @@ console.log(formData.testType)
   //   })
 
   // }
- useEffect(()=> {
-  doRequest().then(data => {
-    console.log(data)
-    setObjResponse(prevObj => ({...prevObj,...data}))
-    console.log(objResponse) 
+//  useEffect(()=> {
+//   doRequest().then(data => {
+//     console.log(data)
+//     setObjResponse(prevObj => ({...prevObj,...data}))
+//     console.log(objResponse) 
       
-  })
- },[])
+//   })
+//  },[])
   // Mock API
-  const handleStartQuiz = (e) => {
+  // const handleStartQuiz = (e) => {
     
-    doRequest().then(data => {
-      console.log(data) // Log to console: success
-      // let clonedData = Object.assign({}, data); // Log to console: success
-      // update objrResponse state
+  //   doRequest().then(data => {
+  //     console.log(data) // Log to console: success
+  //     // let clonedData = Object.assign({}, data); // Log to console: success
+  //     // update objrResponse state
      
       
   
-      setObjResponse(prevObj => ({...prevObj,...data}))
-      // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
+  //     setObjResponse(data.results)
+  //     // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
 
-      console.log(objResponse)  // returns an object with an empty quizlist array. Simply logs the default state.
+  //      // returns an object with an empty quizlist array. Simply logs the default state.
 
   
-    })
-  }
+  //   })
+  // }
 
  
       return (
         // <DisplayScore/>
-        <TimelessQuiz/>
-        // <Router>
-        // <>
-        // <Routes>
-        //   <Route path= "/"  element={<WelcomePage />}/>
-        //   <Route path= "settings" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
-        //   <Route path = "settings/questions" element={<RenderQuestions APIresponse ={objResponse} timed={isTimed} diff= {formData.difficulty} testArea={formData.testType} />}/>
-        //   {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
-        //   {/* <Route path = "highscoreBoard" element = {<HighScoreBoard/>}/> */}
+        // <TimelessQuiz objResponse={objResponse}/>
+        // <div><h1>This is the response: {JSON.stringify(objResponse)}</h1></div>
+        <Router>
+        <>
+        <Routes>
+          {/* <Route path= "/"  element={<WelcomePage />}/> */}
+          
+          <Route path= "/" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
+          <Route path = "questions" element={<RenderQuestions objResponse={objResponse} timed={isTimed} diff= {formData.difficulty} testArea={formData.testType} />}/>
 
-        // </Routes>
-        
-        // </>
-        // </Router>
+
+          {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
+          {/* <Route path = "highscoreBoard" element = {<HighScoreBoard/>}/> */}
+
+        </Routes>
+        </>
+        </Router>
       )
   }
 
