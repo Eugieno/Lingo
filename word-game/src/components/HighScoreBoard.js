@@ -1,44 +1,55 @@
+// import 'bulma/css/bulma.min.css';
+// import { useEffect, useState } from 'react';
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-function HighScoreBoard() {
-  const [scores, setScores] = useState([]);
 
-  useEffect(() => {
-    // Fetch scores from backend API or any data source
-    axios.get('/api/scores')
-      .then(response => {
-        // Sort scores in descending order by score value
-        const sortedScores = response.data.sort((a, b) => b.score - a.score);
-        setScores(sortedScores);
-      })
-      .catch(error => {
-        console.error('Error fetching scores:', error);
-      });
-  }, []);
+// function HighScoreBoard({scoreList}) {
+//     // const [highScoreList, setHighScoreList] = useState(()=> JSON.parse(localStorage.getItem("topScores")))
 
-  return (
-    <section className="section">
-      <div className="container">
-        <h1 className="title">High Score Board</h1>
-        <ul className="list is-hoverable">
-          {scores.map(score => (
-            <li key={score.id} className="list-item">
-              <div className="columns">
-                <div className="column is-three-quarters">
-                  <span className="has-text-weight-bold">{score.name}</span>
-                </div>
-                <div className="column">
-                  <span>{score.score}</span>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
+    
+//     console.log(JSON.parse(localStorage.getItem("topScores")));
+//     let fromLocal = JSON.parse(localStorage.getItem("topScores"))
 
-export default HighScoreBoard;
+
+//     const sortedData = fromLocal.sort((a, b) => b[1] - a[1])
+
+   
+            
+
+//     // useEffect(() => {
+//     //     let fromLocal = JSON.parse(localStorage.getItem("topScore")) || []
+    
+        
+//     //     fromLocal.map(item => {
+//     //         item.sort(function(a,b){return b[1] - a[1]})
+//     //     })
+//     //     setHighScoreList(fromLocal);
+
+//     // },[])
+
+
+//   return (
+//     <div>
+//     <h2>Leaderboard</h2>
+//     <table className='table is-bordered is-striped is-hoverable is-fullwidth'>
+//     <thead>
+//         <tr>
+//             <th>PLAYER NAME</th>
+//             <th>SCORES</th>
+//         </tr> 
+//     </thead>
+     
+//     <tbody>
+//         {sortedData.map(user => 
+//         <tr className="">
+//             <td data-id="name">{user[0]}</td>
+//             <td data-id="score">{user[1]*10}%</td>
+//         </tr>
+//         )}
+//     </tbody>   
+//     </table>
+//     </div>
+//   );
+// }
+
+// export default HighScoreBoard;

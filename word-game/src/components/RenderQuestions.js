@@ -8,13 +8,13 @@ import "./renderQ.css";
 
 export default function RenderQuestions ({diff, testArea, APIresponse,timed}) {
     // const [questionBank, setQuestBank] = useState(APIresponse);
-    const questionBank = {APIresponse};
-    console.log(questionBank)
+    
+    console.log(APIresponse)
       
     return (
         <div>
             
-            {/* <TimelessQuiz resObject={questionBank}/> */}
+            <TimelessQuiz resObject={APIresponse}/>
             {/* {timed? <TimeBoundQuiz resObject={questionBank} />:<TimelessQUiz resObject={questionBank}/>} */}
             {/* <h1>Hello World</h1> */}
         </div>

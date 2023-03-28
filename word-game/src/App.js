@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react'
-// import 'bulma/css/bulma.min.css';
+import 'bulma/css/bulma.min.css';
 import GameSettings from './components/GameSettings';
 import WelcomePage from './components/WelcomePage';
 import RenderQuestions from './components/RenderQuestions';
@@ -8,6 +8,7 @@ import RenderQuestions from './components/RenderQuestions';
 // import HighScoreBoard from './components/HighScoreBoard';
 import doRequest from './utils/API';
 import TimelessQuiz from './components/TimelessQuiz';
+import DisplayScore from './components/DisplayScore';
 
 
 
@@ -20,16 +21,6 @@ const App = () => {
     numOfQuestion: ""
   });
   // To manage API object returned 
-  const initialObj = {
-    area: "",
-    author: "",
-    email: "",
-    level: 0,
-    quizlist: [],
-    result_code: "",
-    result_msg: "",
-    version: ""
-    }
   const [objResponse, setObjResponse] = useState({});
   
   // To manage user's choice of test (timed or not timed)
@@ -123,7 +114,7 @@ console.log(formData.testType)
 
  
       return (
-        // <RenderQuestions/>
+        // <DisplayScore/>
         <TimelessQuiz/>
         // <Router>
         // <>
