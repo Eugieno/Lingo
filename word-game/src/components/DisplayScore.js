@@ -69,17 +69,17 @@ return (
             <div className="final-result">
             <h1>Final Result</h1>
             <h2> You scored {score} out of {arrayLength} - {(score/arrayLength)*100}%</h2>
-            <button onClick={restartGame} className="restart-game">Restart Game</button>
-            <button onClick={onClick} className="restart-game">Save to scoreboard</button>
+            <button style={{marginRight:20,marginBottom:10}} onClick={restartGame} className="restart-game">Restart Game</button>
+            <button style={{marginRight:20}} onClick={onClick} className="restart-game">Save to scoreboard</button>
             {/* List of wrong words */}
             {/* <div>
                 {wrongAns.map((missed) => 
                     <button>{missed}</button>
                 )}
             </div> */}
-            <div>
-            <label>Enter your name: </label>
-                <input value ={userName}className="name-entry" onChange={(e)=> updateUserName(e.target.value)}></input>
+            <div style={{margin:15}}>
+            <label ><em style={{font:"px"}}>Enter your name: </em></label>
+                <input value ={userName}className="name-entry" onChange={(e)=> updateUserName(e.target.value)} placeholder="Name"></input>
             </div>
         </div>
         }

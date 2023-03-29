@@ -4,6 +4,10 @@ import { correct,wrong,greenLight} from "../utils/answerchecker";
 import DisplayScore from "./DisplayScore";
 import 'bulma/css/bulma.min.css';
 import ReactSwitch from "react-switch";
+import Icon from '@mdi/react';
+import { mdiHomeCircle } from '@mdi/js';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -88,6 +92,18 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
             <label className="toggle-label">{theme ==="light"? "Light Mode": "Dark Mode"}</label>
                 <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
             </div>
+
+            <div style={theme==="light"? {position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"black"}:{position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"white"}}>
+              <Icon path={mdiHomeCircle} size={2} />
+            </div>
+
+            <Link to="/">
+            <div style={theme==="light"? {position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"black"}:{position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"white"}}>
+                  <Icon path={mdiHomeCircle} size={2} />
+                </div>
+            </Link>
+             
+            
             
             
 
