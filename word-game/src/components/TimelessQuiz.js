@@ -72,13 +72,13 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
         // <h1>{pokeName}</h1>    // For testing poke API
         <div  className="question-cardCont">
             {/* Header  */}
-//             <h1 className="lingo">Lingo</h1> ---- this has been commented out to maintain the integrity of the main branch until the code beneath is agreed upon.
+           {/* <h1 className="lingo">Lingo</h1>  */}
             <h1 className='lingo' style={{color: "black"}}>
               <p style={{color: "blue", display: "inline"}}>L</p>
               <p style={{color: "green", display: "inline"}}>I</p>
               <p style={{color: "red", display: "inline"}}>N</p>
               <p style={{color: "yellow", display: "inline"}}>G</p>
-              <p style={{color: "white", display: "inline"}}>O:</p>
+              <p style={theme ==="light"? {color: "black", display: "inline"}:{color: "white", display: "inline"}}>O:</p>
             </h1>
             {/* <h1>{pokeName}</h1> */}
             {/* Current score  */}
@@ -111,13 +111,17 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
             // Question Card
             <div className="question-card">
                 <h2> Question {QuestIndex + 1} out of {objResponse.length}</h2>
-                <h3 className="question-text">{objResponse[QuestIndex].quiz[0]} | {objResponse[QuestIndex].quiz[1]} | {objResponse[QuestIndex].quiz[2]}</h3>
+                <h3 className="question-text">{objResponse[QuestIndex].quiz[0].toUpperCase()} | {objResponse[QuestIndex].quiz[1].toUpperCase()} | {objResponse[QuestIndex].quiz[2].toUpperCase()}</h3>
                 <ul className="quiz-options-ul">
-                    <li className="quiz-option-li" onClick={handleAnswerCheck} data-key="1">{objResponse[QuestIndex].option[0]}</li>
-                    <li className="quiz-option-li" onClick={handleAnswerCheck} data-key={2}>{objResponse[QuestIndex].option[1]}</li>
+                    <li className="quiz-option-li" onClick={handleAnswerCheck} data-key="1">{objResponse[QuestIndex].option[0].toUpperCase()}</li>
+                    <li className="quiz-option-li" onClick={handleAnswerCheck} data-key={2}>{objResponse[QuestIndex].option[1].toUpperCase()}</li>
                 </ul>
             </div>)}
 
         </div>
     )
 }
+
+
+
+// objResponse[QuestIndex].quiz[0].charAt(0).toUpperCase() + objResponse[QuestIndex].slice(1)

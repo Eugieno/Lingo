@@ -96,7 +96,10 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
           <span>Game rules</span>
         </span> */}
 
+    {/* Icon for Game rules  */}
         <span style={{position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"white"}}>
+            
+            
             <button onClick={toggleModal}  style={{ color: "black", border: "none", padding: "10px", borderRadius: "20px", cursor: "pointer"}}><span>
               <Icon path={mdiInformation} size={2} />
               </span></button>
