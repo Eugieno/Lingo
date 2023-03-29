@@ -6,6 +6,7 @@ import RenderQuestions from './components/RenderQuestions';
 import WelcomePage from './components/WelcomePage';
 import Rules from "./components/Rules";
 import TimelessQuiz from './components/TimelessQuiz';
+import GameSettings from './components/GameSettings';
 
 
 
@@ -17,6 +18,7 @@ root.render(
       {/* <Rules/> */}
       {/* <TimelessQuiz/> */}
       {/* <RenderQuestions/> */}
+      
     
 </React.StrictMode> 
 );
