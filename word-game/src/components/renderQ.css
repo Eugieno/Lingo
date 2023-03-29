@@ -1,5 +1,5 @@
 .question-card {
-    background-color: grey!important;
+    /* background-color: grey!important; */
     border-radius: 16px;
     padding: 16px;
     width: 80%;
@@ -10,6 +10,53 @@
     text-align: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,rgba(0, 0, 0, 0.23)0px 18px 36px --18px;
 }
+
+/* new */
+#light .question-card  {
+    background-color: grey!important;  
+}
+
+#dark .question-card  {
+    background-color: #121212!important;  
+}
+
+#dark .quiz-options-ul .quiz-option-li:hover {
+    background-color: #6FD08C;
+    border:1px solid black;
+    color: black;
+}
+#dark .question-text {
+    color: white;
+}
+
+#dark .question-cardCont .lingo, .current-score {
+    color: white;
+}
+
+#light .question-cardCont .current-score {
+    color: black;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 1rem;
+    
+}
+
+#light .toggle-label {
+    color:black;
+
+}
+
+#dark .toggle-label {
+    color:white;
+    
+}
+
+
+
 
 .quiz-options-ul {
     list-style: none;
@@ -25,9 +72,10 @@
 }
 
 .quiz-option-li:hover {
-    background-color: #cce5ff;
+    background-color: #3DFAFF;
     border:1px solid #b8daff;
 }
+
 
 
 
@@ -78,4 +126,15 @@ h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-  
+
+
+#light{
+    background-color: #f3ebf6;
+
+}
+
+
+#dark{
+    background-color: #1f1b24;
+    
+}

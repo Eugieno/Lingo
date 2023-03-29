@@ -1,6 +1,8 @@
 import 'bulma/css/bulma.min.css';
 import { Link,} from "react-router-dom";
 import getRandomIntInclusive from './randomNumbergen';
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
 
 
 function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit, onQuizStart,onTimerOption }) {
@@ -16,7 +18,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                 <p style={{color: "green", backgroundColor: "grey", display: "inline"}}>I</p>
                 <p style={{color: "red", backgroundColor: "grey", display: "inline"}}>N</p>
                 <p style={{color: "yellow", backgroundColor: "grey", display: "inline"}}>G</p>
-                <p style={{color: "white", backgroundColor: "gray", display: "inline"}}>O:</p>&nbsp;! 
+                <p style={{color: "white", backgroundColor: "gray", display: "inline"}}>O</p>&nbsp;! 
             </h1>
             <p style={{fontSize:30}} class="subtitle">
               The Ultimate word association Game
@@ -24,11 +26,16 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
           </div>
         </section>
 
-        <span style={{position: "fixed",top: 0,right: 0, border:"2px solid", padding:5, margin:5, color:"white"}} className="icon-text is-hovered">
+        {/* <span style={{position: "fixed",top: 0,right: 0, border:"2px solid", padding:5, margin:5, color:"white"}} className="icon-text is-hovered">
         <span className ="icon has-text-info">
           <i className="fas fa-info-circle"></i>
         </span>
           <span>Game rules</span>
+        </span> */}
+
+        <span style={{position: "fixed",top: 0,right: 0, border:"2px solid", padding:5, margin:5, color:"white"}}>
+            <button  style={{backgroundColor: "skyblue", color: "black", border: "none", padding: "10px", borderRadius: "20px", cursor: "pointer"}}><span>Game rules</span></button>
+            
         </span>
 
 

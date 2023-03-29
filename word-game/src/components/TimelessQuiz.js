@@ -2,16 +2,20 @@ import { useState } from "react"
 import { mockObject } from "../utils/mockObject";
 import { correct,wrong,greenLight} from "../utils/answerchecker";
 import DisplayScore from "./DisplayScore";
+import 'bulma/css/bulma.min.css';
+import ReactSwitch from "react-switch";
 
 
 
 
-export default function TimelessQuiz({objResponse}) {
+
+export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmoved se from response 
    
     const [QuestIndex, setQuestIndex] = useState(0);
     const [showFinalResult, setFinalresult] = useState(false);
     const [score, setScore] = useState(0);
     const [wrongAns, updateWrongAns] = useState([])
+    const [darkMode, setDarkMode] =useState(false)
 
     // const objResponse = mockObject.quizlist;
     // const pokeName = objResponse[0].quiz[0];
@@ -52,20 +56,34 @@ export default function TimelessQuiz({objResponse}) {
         } else {
             setFinalresult(true);
         }
-        // console.log(e.target.getAttribute('data-key'))
+        
         
     
     }
    console.log("This is a Response from the API",JSON.stringify(objResponse))
+
+   const handleScreenLight = () => setDarkMode(!darkMode);
+
+   
+   
+
+//    style={screenLight && {backgroundColor: "black", color:"white"}}
     return (
         // <h1>{pokeName}</h1>    // For testing poke API
-        <div className="question-cardCont">
+        <div  className="question-cardCont">
             {/* Header  */}
-            <h1>Lingo</h1>
+            <h1 className="lingo">Lingo</h1>
             {/* <h1>{pokeName}</h1> */}
             {/* Current score  */}
-            <h2>Current score: {score}</h2>
-        
+            <h2 className="current-score">Current score: {score}</h2>
+            
+            <div id = "theme-toggle" className="theme-toggle">
+            <label className="toggle-label">{theme ==="light"? "Light Mode": "Dark Mode"}</label>
+                <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+            </div>
+            
+            
+
             {showFinalResult? (
             // Final Result
             <DisplayScore restartGame={restartGame} score={score} arrayLength={objResponse.length}/>
@@ -86,7 +104,7 @@ export default function TimelessQuiz({objResponse}) {
             // Question Card
             <div className="question-card">
                 <h2> Question {QuestIndex + 1} out of {objResponse.length}</h2>
-                <h3 className="question-text">{objResponse[QuestIndex].quiz[0]}, {objResponse[QuestIndex].quiz[1]},{objResponse[QuestIndex].quiz[2]}</h3>
+                <h3 className="question-text">{objResponse[QuestIndex].quiz[0]} | {objResponse[QuestIndex].quiz[1]} | {objResponse[QuestIndex].quiz[2]}</h3>
                 <ul className="quiz-options-ul">
                     <li className="quiz-option-li" onClick={handleAnswerCheck} data-key="1">{objResponse[QuestIndex].option[0]}</li>
                     <li className="quiz-option-li" onClick={handleAnswerCheck} data-key={2}>{objResponse[QuestIndex].option[1]}</li>
