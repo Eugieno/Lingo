@@ -72,7 +72,14 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
         // <h1>{pokeName}</h1>    // For testing poke API
         <div  className="question-cardCont">
             {/* Header  */}
-            <h1 className="lingo">Lingo</h1>
+//             <h1 className="lingo">Lingo</h1> ---- this has been commented out to maintain the integrity of the main branch until the code beneath is agreed upon.
+            <h1 className='lingo' style={{color: "black"}}>
+              <p style={{color: "blue", display: "inline"}}>L</p>
+              <p style={{color: "green", display: "inline"}}>I</p>
+              <p style={{color: "red", display: "inline"}}>N</p>
+              <p style={{color: "yellow", display: "inline"}}>G</p>
+              <p style={{color: "white", display: "inline"}}>O:</p>
+            </h1>
             {/* <h1>{pokeName}</h1> */}
             {/* Current score  */}
             <h2 className="current-score">Current score: {score}</h2>
