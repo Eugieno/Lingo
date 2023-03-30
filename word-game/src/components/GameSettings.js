@@ -145,6 +145,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                         <option value= "sat">SAT</option>
                         <option value= "overall">Combined</option>
                         <option value= "ielts">IELTS</option>
+                        <option value= "gre">GRE</option>
                     </select>
                     </div>
                 </div>
@@ -161,8 +162,8 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                         type = ""
                         placeholder='' >
                         <option value = {getRandomIntInclusive(1,4)} >Easy</option>
-                        <option value = {getRandomIntInclusive(5,7)}>Medium</option>
-                        <option value = {getRandomIntInclusive(8,10)}>Hard</option>
+                        <option value = {getRandomIntInclusive(5,8)}>Medium</option>
+                        <option value = {getRandomIntInclusive(9,10)}>Hard</option>
                     </select>
                     </div>
                 </div>
