@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { mockObject } from "../utils/mockObject";
-import { correct,wrong,greenLight} from "../utils/answerchecker";
+// import { mockObject } from "../utils/mockObject";
+import { correct,wrong} from "../utils/answerchecker";
 import DisplayScore from "./DisplayScore";
 import 'bulma/css/bulma.min.css';
 import ReactSwitch from "react-switch";
@@ -18,18 +18,15 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
     const [QuestIndex, setQuestIndex] = useState(0);
     const [showFinalResult, setFinalresult] = useState(false);
     const [score, setScore] = useState(0);
-    const [wrongAns, updateWrongAns] = useState([])
-    const [darkMode, setDarkMode] =useState(false)
+    
+   
 
     // const objResponse = mockObject.quizlist;
     // const pokeName = objResponse[0].quiz[0];
 
 
 
-    const handleNextQuestion = () => {
-        const nextQuestion = QuestIndex + 1;
-        setQuestIndex(nextQuestion);
-    }
+    
     const restartGame = () => {
         setScore(0);
         setFinalresult(false);
@@ -48,11 +45,7 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
         } else {
             wrong()
             console.log("Wrong!")
-           
-            // collecting all wrong answers and updating them in an object
-            // const currentWrongAns = e.target.innerText.trim()
-
-            // updateWrongAns([...wrongAns,...currentWrongAns])
+        
         }
 
         if (QuestIndex + 1 < objResponse.length) {
@@ -66,7 +59,7 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
     }
    console.log("This is a Response from the API",JSON.stringify(objResponse))
 
-   const handleScreenLight = () => setDarkMode(!darkMode);
+   
 
    
    
