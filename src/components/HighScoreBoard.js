@@ -4,6 +4,7 @@ import 'bulma/css/bulma.min.css';
 
 
 function HighScoreBoard({scoreList}) {
+
     console.log(JSON.parse(localStorage.getItem("topScores")));
     let fromLocal = JSON.parse(localStorage.getItem("topScores"))
     const sortedData = fromLocal.sort((a, b) => b[1] - a[1])
@@ -21,7 +22,7 @@ function HighScoreBoard({scoreList}) {
      
     <tbody>
         {sortedData.map(user => 
-        <tr className="">
+        <tr key={user[0]} className="">
             <td data-id="name">{user[0]}</td>
             <td data-id="score">{user[1]*10}%</td>
         </tr>
