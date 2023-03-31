@@ -2,7 +2,7 @@
 
 ##  Table of Contents
 * [Description](#Description) 
-* [UserStory](#Userstory) 
+* [UserStory](#UserStory) 
 * [App-screen-shot](#App-screen-shot)
 * [AppFeatures](#AppFeatures)
 * [Reflection ](#Reflection )
@@ -19,7 +19,7 @@ With each round of the game, you will be presented with a set of words and taske
 The game's question bank is generated through the use of Word Quiz and Words API, ensuring a diverse and comprehensive set of inquiries. You can customize the difficulty level, time limit, and number of questions to personalize your gaming experience.
 
 After completing a game, you can track your progress on a shared leaderboard, competing against other players for top placement. This game is perfect for anyone looking to have fun, learn new words, and sharpen their language skills. So, what are you waiting for? Play the Word Association game today and put your vocabulary to the test!
-## User Story 
+## UserStory 
 ```
  
 * The game's purpose is to challenge players to make connections between words. 
