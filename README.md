@@ -36,7 +36,7 @@ After completing a game, you can track your progress on a shared leaderboard, co
 ![Current-score-Dark](https://user-images.githubusercontent.com/102771343/229093300-a2bda077-73cd-4ea1-abff-33bec9859ee8.png)
 ![Finale-result](https://user-images.githubusercontent.com/102771343/229093328-4ebe1333-dc7f-48ab-913e-4d44fb414dda.png)
 
-## App Features
+## App Features ([Link to Live App](https://main--quiet-blini-2d21cc.netlify.app/))
 
 Page One:
 
@@ -48,13 +48,11 @@ Page One:
 
 Page Two:
 
-* App logo
 * List of questions to choose from rendered in a card form
 * Accessibility button that turns the page black and white for improved accessibility
 
 Third Page:
 
-* Current score of the game
 * Result card displaying the final score
 * Restart game button
 * input name text
