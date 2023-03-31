@@ -1,6 +1,10 @@
 import { useState,useEffect } from "react";
 import HighScoreBoard from "./HighScoreBoard";
 import useLocalStorageState from 'use-local-storage-state'
+import Icon from '@mdi/react';
+import { mdiHomeCircle } from '@mdi/js';
+
+
 
 // import React from "react";
 // import { Link } from "react-router-dom";
@@ -78,7 +82,7 @@ return (
                 )}
             </div> */}
             <div style={{margin:15}}>
-            <label ><em style={{font:"px"}}>Enter your name: </em></label>
+            <label ><em >Enter your name: </em></label>
                 <input value ={userName}className="name-entry" onChange={(e)=> updateUserName(e.target.value)} placeholder="Name"></input>
             </div>
         </div>

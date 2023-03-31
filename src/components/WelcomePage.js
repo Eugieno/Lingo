@@ -21,5 +21,9 @@ function WelcomePage({updateAPIstate}) {
     </div>
   );
 }
+
+
+
+
 // onClick={GameRulesModal}
 export default WelcomePage;
