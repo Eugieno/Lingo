@@ -22,8 +22,11 @@ After completing a game, you can track your progress on a shared leaderboard, co
 ## User Story 
 ```
  
-* The game's purpose is to challenge players to make connections between words, expand their vocabulary, and think creatively. 
-* With multiple levels of difficulty and a variety of categories to choose from, LINGO offers a unique and entertaining way to have fun while exercising their brain.
+* The game's purpose is to challenge players to make connections between words. 
+* Expand their vocabulary.
+* Think creatively. 
+* With multiple levels of difficulty.
+*  variety of categories to choose from, LINGO offers a unique and entertaining way to have fun while exercising their brain.
 * Whether you're a language enthusiast or just looking for a fun and challenging game, come and have a LINGO .
 
 ```
