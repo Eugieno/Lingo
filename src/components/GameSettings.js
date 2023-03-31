@@ -3,8 +3,7 @@ import 'bulma/css/bulma.min.css';
 import { Link,} from "react-router-dom";
 import getRandomIntInclusive from './randomNumbergen';
 import Icon from '@mdi/react';
-// import { mdiHomeCircle } from '@mdi/js';
-// import { mdiCursorPointer } from '@mdi/js';
+
 import { mdiInformation } from '@mdi/js';
 
 
@@ -12,18 +11,22 @@ import { mdiInformation } from '@mdi/js';
 
 function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, onFormsubmit, onQuizStart,onTimerOption }) {
 
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState("modal");
 
       const toggleModal = () => {
+        setShowModal(curr => curr=== "modal"? "modal is-active": "modal")
+      }
+
+      // const toggleModal = () => {
     
-        setShowModal(curr => (curr ===false? true: false));
-        console.log("I am ", showModal)
-      };
+      //   setShowModal(curr => (curr ===false? true: false));
+      //   console.log("I am ", showModal)
+      // };
 
     return (
         <div>
         {/* Hero section-Welcome */}
-        <section className="hero is-medium is-link has-background-grey has-text-light">
+        <section className="hero is-medium is-link has-background-grey has-text-light is-mobile">
           <div style={{textAlign:"center"}} class="hero-body">
             <h1 style={{fontSize:60}} className="title has-text-weight-bold" >
               Welcome to &nbsp;
@@ -37,58 +40,68 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
               The Ultimate word association Game
             </p>
           </div>
+
+          {/* Modal section starts here, you can apply more stylings here */}
+          {showModal && (
+              <div id="modal" class={showModal}>
+              <div class="modal-background"></div>
+              <div class="modal-content">
+                <div class="box">
+                  <h2>How to Play</h2>
+                  <p> Choose a Test Provider and a desired difficulty  level. You will be taken to the question page. 
+                  </p>
+                  <br/>
+                  <p>
+                    For each question, you are provided with three words that are related in certain ways. Their relationship may be antonymic, synonymic, contextual, denotative etc. 
+                  </p>
+                  <br/>
+                  <p>
+                    Your task is to choose a word (out of 2 options) that shares thesame relationship as the 3 words provided.  
+                  </p>
+                  <br/>
+                  <p>
+                      Example: 
+                    <em> SHOP | WATER | STOP</em>
+          
+                      <p>CODE</p>
+                      <p>BAR</p>
+                     <p>Correct answer would be BAR. Reason being that you can find water and stop at the shop and bar. The association amongst the words in this case is <em>CONTEXTUAL</em></p>
+                     <br/>
+                     <p>Try to get as many questions right as possible to climb the leaderboard!</p>
+                  </p>
+               
+                </div>
+              </div>
+              <button onClick={toggleModal} class="modal-close is-large" aria-label="close">Close</button>
+            </div>
+              // <div >
+              //   <div className="modal-content">
+              //     <h2>How to Play</h2>
+              //     <ul>
+              //       <li>Choose number of questions, game type and difficulty level.</li>
+              //       <li>Choose whether you want a timed quiz or not.</li>
+              //       <li>
+              //         In the game, three words will appear on the screen. Below them,
+              //         there will be two selectable word options. You must choose the option
+              //         that relates to all three words.
+              //       </li>
+              //       <li>
+              //         Example: 
+              //             Tree, Branch, Root.
+              //                 Plant - dog
+              //         Correct answer would be Plant.
+              //       </li>
+              //       <li>For each correct answer, you will receive 1 point.</li>
+              //       <li>Try to get as many questions right as possible to climb the leaderboard!</li>
+              //     </ul>
+
+              //     <button onClick={toggleModal}>Close</button>
+              //   </div>
+              // </div>
+            )}
         </section>
 
-        {/* Modal section starts here, you can apply more stylings here */}
-        {showModal && (
-            <div  >
-            <div className="modal-background"></div>
-            <div  style={{color:"white"}} className="modal-content">
-            <p>
-                Choose number of questions, game type and difficulty level.
-                Choose whether you want a timed quiz or not.
-            </p>
-            <br/>
-            <p> In the game, three words will appear on the screen. Below them, there will be two selectable word options. You must choose the option that relates to all three words.
-            </p>
-            <p>
-            Example: 
-                    <em>Tree, Branch, Root.
-                  Plant - dog </em>
-                Correct answer would be <em>Plant.</em>
-          
-                For each correct answer, you will receive 1 point.
-                Try to get as many questions right as possible to climb the leaderboard!
-            </p>
-            
-            </div>
-            <button className="modal-close is-large" aria-label="close"></button>
-          </div>
-            // <div >
-            //   <div className="modal-content">
-            //     <h2>How to Play</h2>
-            //     <ul>
-            //       <li>Choose number of questions, game type and difficulty level.</li>
-            //       <li>Choose whether you want a timed quiz or not.</li>
-            //       <li>
-            //         In the game, three words will appear on the screen. Below them,
-            //         there will be two selectable word options. You must choose the option
-            //         that relates to all three words.
-            //       </li>
-            //       <li>
-            //         Example: 
-            //             Tree, Branch, Root.
-            //                 Plant - dog
-            //         Correct answer would be Plant.
-            //       </li>
-            //       <li>For each correct answer, you will receive 1 point.</li>
-            //       <li>Try to get as many questions right as possible to climb the leaderboard!</li>
-            //     </ul>
-
-            //     <button onClick={toggleModal}>Close</button>
-            //   </div>
-            // </div>
-          )}
+        
         {/* <span style={{position: "fixed",top: 0,right: 0, border:"2px solid", padding:5, margin:5, color:"white"}} className="icon-text is-hovered">
         <span className ="icon has-text-info">
           <i className="fas fa-info-circle"></i>
