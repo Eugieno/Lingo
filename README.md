@@ -1,8 +1,8 @@
 # Lingo - Word Association game App
 
 ##  Table of Contents
-* [](#) 
-* [](#) 
+* [Description](#Description) 
+* [UserStory](#Userstory) 
 * [](#)
 * [](#)
 * [](#)
