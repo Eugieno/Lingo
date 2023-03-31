@@ -15,14 +15,14 @@ export default function DisplayScore ({score, arrayLength, restartGame}) {
     const [userName, updateUserName] = useState();
     const [showLeaderboard, setLeaderboard] = useState(false);
     const [nameAndScore, setNameAndScore] = useLocalStorageState("topScores", {
-        serializer: []
+        defaultValue: []
     });
     const [scoreList, setScoreList] = useState()
     
     console.log(score)
 
     const onClick = (e) => {       
-        updateUserName("")
+        // updateUserName("")
         setNameAndScore([...nameAndScore, [userName, score]])
        
         // control for navigating to highscore board : single page app
@@ -74,12 +74,6 @@ return (
             <h2> You scored {score} out of {arrayLength} - {(score/arrayLength)*100}%</h2>
             <button style={{marginRight:20,marginBottom:10}} onClick={restartGame} className="restart-game">Restart Game</button>
             <button style={{marginRight:20}} onClick={onClick} className="restart-game">Save to scoreboard</button>
-            {/* List of wrong words */}
-            {/* <div>
-                {wrongAns.map((missed) => 
-                    <button>{missed}</button>
-                )}
-            </div> */}
             <div style={{margin:15}}>
             <label ><em >Enter your name: </em></label>
                 <input value ={userName}className="name-entry" onChange={(e)=> updateUserName(e.target.value)} placeholder="Name"></input>
