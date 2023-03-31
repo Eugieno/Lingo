@@ -3,7 +3,6 @@ import 'bulma/css/bulma.min.css';
 import { Link,} from "react-router-dom";
 import getRandomIntInclusive from './randomNumbergen';
 import Icon from '@mdi/react';
-
 import { mdiInformation } from '@mdi/js';
 
 
@@ -14,14 +13,8 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
     const [showModal, setShowModal] = useState("modal");
 
       const toggleModal = () => {
-        setShowModal(curr => curr=== "modal"? "modal is-active": "modal")
+        setShowModal(curr => curr=== "modal"? "modal is-active is-mobile": "modal")
       }
-
-      // const toggleModal = () => {
-    
-      //   setShowModal(curr => (curr ===false? true: false));
-      //   console.log("I am ", showModal)
-      // };
 
     return (
         <div>
@@ -43,10 +36,10 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
 
           {/* Modal section starts here, you can apply more stylings here */}
           {showModal && (
-              <div id="modal" class={showModal}>
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box">
+              <div id="modal" className={showModal}>
+              <div className="modal-background"></div>
+              <div className="modal-content">
+                <div className="box">
                   <h2>How to Play</h2>
                   <p> Choose a Test Provider and a desired difficulty  level. You will be taken to the question page. 
                   </p>
@@ -63,9 +56,9 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                       Example: 
                     <em> SHOP | WATER | STOP</em>
           
-                      <p>CODE</p>
-                      <p>BAR</p>
-                     <p>Correct answer would be BAR. Reason being that you can find water and stop at the shop and bar. The association amongst the words in this case is <em>CONTEXTUAL</em></p>
+                      <p>Option 1 - CODE</p>
+                      <p>Option 2 - BAR</p>
+                     <p>Correct answer would be BAR. Reason being that you could make a sentence with this words; I will STOP at the SHOP to get WATER. Replace SHOP with BAR and the sentence is still valid. The association amongst the words in this case is <em>CONTEXTUAL</em></p>
                      <br/>
                      <p>Try to get as many questions right as possible to climb the leaderboard!</p>
                   </p>
@@ -74,73 +67,20 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
               </div>
               <button onClick={toggleModal} class="modal-close is-large" aria-label="close">Close</button>
             </div>
-              // <div >
-              //   <div className="modal-content">
-              //     <h2>How to Play</h2>
-              //     <ul>
-              //       <li>Choose number of questions, game type and difficulty level.</li>
-              //       <li>Choose whether you want a timed quiz or not.</li>
-              //       <li>
-              //         In the game, three words will appear on the screen. Below them,
-              //         there will be two selectable word options. You must choose the option
-              //         that relates to all three words.
-              //       </li>
-              //       <li>
-              //         Example: 
-              //             Tree, Branch, Root.
-              //                 Plant - dog
-              //         Correct answer would be Plant.
-              //       </li>
-              //       <li>For each correct answer, you will receive 1 point.</li>
-              //       <li>Try to get as many questions right as possible to climb the leaderboard!</li>
-              //     </ul>
-
-              //     <button onClick={toggleModal}>Close</button>
-              //   </div>
-              // </div>
             )}
         </section>
 
-        
-        {/* <span style={{position: "fixed",top: 0,right: 0, border:"2px solid", padding:5, margin:5, color:"white"}} className="icon-text is-hovered">
-        <span className ="icon has-text-info">
-          <i className="fas fa-info-circle"></i>
-        </span>
-          <span>Game rules</span>
-        </span> */}
-
     {/* Icon for Game rules  */}
         <span style={{position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"white"}}>
-            
-            
+
             <button onClick={toggleModal}  style={{ color: "black", border: "none", padding: "10px", borderRadius: "20px", cursor: "pointer"}}><span>
               <Icon path={mdiInformation} size={2} />
               </span></button>
             
         </span>
 
-
-        
-
         <form className="form">
           <div className = "">
-            {/* <div className="field">
-              <label class="label">Number of questions</label>
-              <div class="control">
-                <div class="select">
-                  <select
-                  value={numOfQuestion}
-                  name ="numOfQuestion"
-                  onChange={onFormFieldChange}
-                  type = ""
-                  placeholder='' >
-                    <option value="10">10</option>
-                    <option value= "15">15</option>
-                    <option value = "20">20</option>
-                  </select>
-                </div>
-              </div>
-            </div> */}
 
             <div style={{display:"flex", justifyContent:"space-evenly"}}>
                 <div class="field">

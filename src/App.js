@@ -2,15 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import 'bulma/css/bulma.min.css';
 import GameSettings from './components/GameSettings';
-
 import RenderQuestions from './components/RenderQuestions';
-// import DisplayScore from './components/DisplayScore';
-// import HighScoreBoard from './components/HighScoreBoard';
 import doRequest from './utils/API';
-
-
-
-
 
 const App = () => {
 
@@ -32,20 +25,16 @@ console.log(formData.testType)
 
 // Updates the formdata on this App component
  const handleFormFieldChange = (e) => {
-   
     let {name, value} = e.target;
     const newFormData = {...formData, [name]:value}
     setFormData(newFormData)
  }
 
-// Updates the isTimed data on this App component
+// Updates the isTimed data on this App component - Upcoming integration 
  const handleTimerUpdate = (e) => {
   const newIsTimed = e.target.value;
   setIsTimed(newIsTimed);
-
   console.log(newIsTimed);
-  
-
  }
 
 //  Triggers API call - on click of start quiz button in game settings component
@@ -64,18 +53,17 @@ console.log(formData.testType)
     
     doRequest(formData.difficulty, formData.testType).then(data => {
       console.log(data) // Log to console: success
-      // let clonedData = Object.assign({}, data); // Log to console: success
-      // update objrResponse state
-     
+      
       
       setObjResponse(data.quizlist)
-      // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
-    
+      
       
 
       
     })
   }
+
+
   // const handleUpdateAPI = ()=> {
   //   doRequest().then(data => {
   //     console.log(data)
@@ -101,25 +89,12 @@ console.log(formData.testType)
   //     // let clonedData = Object.assign({}, data); // Log to console: success
   //     // update objrResponse state
      
-      
-  
-
-
- 
       return (
-        
-        
         <Router>
         <>
         <Routes>
-          
-          
           <Route path= "/" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
           <Route path = "questions" element={<RenderQuestions objResponse={objResponse} timed={isTimed} diff= {formData.difficulty} testArea={formData.testType} />}/>
-
-
-          
-
         </Routes>
         </>
         </Router>

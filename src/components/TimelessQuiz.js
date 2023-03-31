@@ -9,24 +9,13 @@ import { mdiHomeCircle } from '@mdi/js';
 import { Link } from 'react-router-dom';
 
 
-
-
-
-
-export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmoved se from response 
+export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   
    
     const [QuestIndex, setQuestIndex] = useState(0);
     const [showFinalResult, setFinalresult] = useState(false);
     const [score, setScore] = useState(0);
     
-   
-
-    // const objResponse = mockObject.quizlist;
-    // const pokeName = objResponse[0].quiz[0];
-
-
-
-    
+       
     const restartGame = () => {
         setScore(0);
         setFinalresult(false);
@@ -34,7 +23,6 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
         
     }
 
-   
     const handleAnswerCheck = (e) => {
         if (e.target.getAttribute('data-key').toString() === objResponse[QuestIndex].correct.toString()) {
             correct();
@@ -59,17 +47,10 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
     }
    console.log("This is a Response from the API",JSON.stringify(objResponse))
 
-   
-
-   
-   
-
-//    style={screenLight && {backgroundColor: "black", color:"white"}}
     return (
-        // <h1>{pokeName}</h1>    // For testing poke API
+       
         <div  className="question-cardCont">
             {/* Header  */}
-           {/* <h1 className="lingo">Lingo</h1>  */}
             <h1 className='lingo' style={{color: "black"}}>
               <p style={{color: "blue", display: "inline"}}>L</p>
               <p style={{color: "green", display: "inline"}}>I</p>
@@ -77,7 +58,7 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
               <p style={{color: "yellow", display: "inline"}}>G</p>
               <p style={theme ==="light"? {color: "black", display: "inline"}:{color: "white", display: "inline"}}>O:</p>
             </h1>
-            {/* <h1>{pokeName}</h1> */}
+        
             {/* Current score  */}
             <h2 className="current-score">Current score: {score}</h2>
             
@@ -96,26 +77,9 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///rmo
                 </div>
             </Link>
              
-            
-            
-            
-
             {showFinalResult? (
             // Final Result
             <DisplayScore restartGame={restartGame} score={score} arrayLength={objResponse.length}/>
-            // <div className="final-result">
-            //     <h1>Final Result</h1>
-            //     <h2> You scored {score} out of {objResponse.length} - {(score/objResponse.length)*100}%</h2>
-            //     <button onClick={restartGame} className="restart-game">Restart Game</button>
-            //     {/* <button onClick={saveToLocal} className="restart-game">Save to scoroard</button> */}
-            //     {/* List of wrong words */}
-            //     <div>
-            //         {wrongAns.map((missed) => 
-            //             <button>{missed}</button>
-            //         )}
-            //     </div>
-
-            // </div>
             ) : (
             // Question Card
             <div className="question-card">

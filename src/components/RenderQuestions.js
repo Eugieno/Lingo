@@ -1,8 +1,7 @@
-import TimeBoundQuiz from "./TimeBoundQuiz";
 import TimelessQuiz from "./TimelessQuiz";
 import { createContext, useState } from "react";
 import "./renderQ.css";
-import ReactSwitch from "react-switch"
+
 
 export const ThemeContext = createContext(null);
 
