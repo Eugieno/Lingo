@@ -19,6 +19,33 @@ The game's purpose is to challenge players to make connections between words, ex
 
 ## App Features
 
+Page One:
+
+* Welcome message and the logo of the page.
+* Model that instructs the user on how to play the game.
+* Dropdown menu to choose the game to play.
+* Another dropdown menu to choose the game difficulty.
+* Start game button.
+
+Page Two:
+
+* App logo
+* List of questions to choose from rendered in a card form
+* Accessibility button that turns the page black and white for improved accessibility
+
+Third Page:
+
+* Current score of the game
+* Result card displaying the final score
+* Restart game button
+* input name text
+* Save score game button to save the final score
+
+Final page :
+
+* Leaderboard
+* View the list of players who have played the game
+* Sort the players in ascending order based on their scores"
 
 ## Reflection 
 
