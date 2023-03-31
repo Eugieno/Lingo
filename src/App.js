@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useRef, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import 'bulma/css/bulma.min.css';
 import GameSettings from './components/GameSettings';
-import WelcomePage from './components/WelcomePage';
+
 import RenderQuestions from './components/RenderQuestions';
 // import DisplayScore from './components/DisplayScore';
 // import HighScoreBoard from './components/HighScoreBoard';
 import doRequest from './utils/API';
-import TimelessQuiz from './components/TimelessQuiz';
-import DisplayScore from './components/DisplayScore';
+
+
 
 
 

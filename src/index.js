@@ -14,12 +14,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <React.StrictMode>
       <App cup={"full"}/>
-      {/* <WelcomePage/> */}
-      {/* <Rules/> */}
-      {/* <TimelessQuiz/> */}
-      {/* <RenderQuestions/> */}
-      
-    
 </React.StrictMode> 
 );
 

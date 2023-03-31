@@ -1,8 +1,7 @@
 import { useState,useEffect } from "react";
 import HighScoreBoard from "./HighScoreBoard";
 import useLocalStorageState from 'use-local-storage-state'
-import Icon from '@mdi/react';
-import { mdiHomeCircle } from '@mdi/js';
+
 
 
 
