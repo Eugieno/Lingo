@@ -4,7 +4,7 @@
 * [Description](#Description) 
 * [UserStory](#Userstory) 
 * [App-screen-shot](#App-screen-shot)
-* [](#)
+* [AppFeatures](#)
 * [](#)
 * [](#)
 * [](#)
@@ -78,6 +78,12 @@ Overall, the process of creating the Lingo game was a valuable learning experien
 * Introduce alternative languages – expand the game so that it can be used to expand a player's linguistic skills by having them play the game in a different language. This makes LINGO to increase its customer base.
 For those looking for a different game experience, a hangman-style game with blank lines representing the connective word will be introduced as an alternative UI experience. 
 These new additions will make Lingo even more inclusive, fun, and diverse, expanding its appeal to an even wider audience
+
+## Credits 
+* Faduma Ibrahim
+* Eugene Oluyemi 
+* Thomas Screen
+* Sakariye Sabrie.
 
 ## Links 
 
