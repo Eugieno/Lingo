@@ -25,5 +25,9 @@ The game's purpose is to challenge players to make connections between words, ex
 
 ## Upcoming Features
 
-
+* Add a dictionary tab so players can search for the meaning of words and their usage in different contexts. 
+* Another exciting feature is player match, which allows players to search for and challenge specific opponents such as friends and family. 
+* Introduce alternative languages – expand the game so that it can be used to expand a player's linguistic skills by having them play the game in a different language. This makes LINGO to increase its customer base.
+For those looking for a different game experience, a hangman-style game with blank lines representing the connective word will be introduced as an alternative UI experience. 
+These new additions will make Lingo even more inclusive, fun, and diverse, expanding its appeal to an even wider audience
 ## Links 
