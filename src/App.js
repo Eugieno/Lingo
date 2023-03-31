@@ -103,32 +103,22 @@ console.log(formData.testType)
      
       
   
-  //     setObjResponse(data.results)
-  //     // setObjResponse({...objResponse, quizlist:clonedData.quizlist});   //problem: setObjResponse isn't updating objResponse state variable on the App component so I can't use the API response in the render component, hence the undefined error. 
 
-  //      // returns an object with an empty quizlist array. Simply logs the default state.
-
-  
-  //   })
-  // }
 
  
       return (
-        // <DisplayScore/>
-        // <TimelessQuiz objResponse={objResponse}/>
-        // <div><h1>This is the response: {JSON.stringify(objResponse)}</h1></div>
+        
         
         <Router>
         <>
         <Routes>
-          {/* <Route path= "/"  element={<WelcomePage />}/> */}
+          
           
           <Route path= "/" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
           <Route path = "questions" element={<RenderQuestions objResponse={objResponse} timed={isTimed} diff= {formData.difficulty} testArea={formData.testType} />}/>
 
 
-          {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
-          {/* <Route path = "highscoreBoard" element = {<HighScoreBoard/>}/> */}
+          
 
         </Routes>
         </>
