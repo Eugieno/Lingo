@@ -9,11 +9,13 @@ import { mdiHomeCircle } from '@mdi/js';
 import { Link } from 'react-router-dom';
 
 
-export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   
+export default function TimelessQuiz({theme,toggleTheme,objResponse}) {   ///removed se from response to use mock
    
     const [QuestIndex, setQuestIndex] = useState(0);
     const [showFinalResult, setFinalresult] = useState(false);
     const [score, setScore] = useState(0);
+
+    // const objResponse = mockObject.quizlist;
     
        
     const restartGame = () => {
@@ -49,7 +51,7 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {
 
     return (
        
-        <div  className="question-cardCont">
+        <section  className="question-cardCont ">
             {/* Header  */}
             <h1 className='lingo' style={{color: "black"}}>
               <p style={{color: "blue", display: "inline"}}>L</p>
@@ -79,22 +81,21 @@ export default function TimelessQuiz({theme,toggleTheme,objResponse}) {
              
             {showFinalResult? (
             // Final Result
-            <DisplayScore restartGame={restartGame} score={score} arrayLength={objResponse.length}/>
+            <DisplayScore restartGame={restartGame} theme = {theme} score={score} arrayLength={objResponse.length}/>
             ) : (
             // Question Card
-            <div className="question-card">
+            <section className="question-card section">
                 <h2> Question {QuestIndex + 1} out of {objResponse.length}</h2>
                 <h3 className="question-text">{objResponse[QuestIndex].quiz[0].toUpperCase()} | {objResponse[QuestIndex].quiz[1].toUpperCase()} | {objResponse[QuestIndex].quiz[2].toUpperCase()}</h3>
                 <ul className="quiz-options-ul">
                     <li className="quiz-option-li" onClick={handleAnswerCheck} data-key="1">{objResponse[QuestIndex].option[0].toUpperCase()}</li>
                     <li className="quiz-option-li" onClick={handleAnswerCheck} data-key={2}>{objResponse[QuestIndex].option[1].toUpperCase()}</li>
                 </ul>
-            </div>)}
+            </section>)}
 
-        </div>
+        </section>
     )
 }
 
 
 
-// objResponse[QuestIndex].quiz[0].charAt(0).toUpperCase() + objResponse[QuestIndex].slice(1)

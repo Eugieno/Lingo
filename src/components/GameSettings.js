@@ -17,7 +17,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
       }
 
     return (
-        <div>
+        <section className='section'>
         {/* Hero section-Welcome */}
         <section className="hero is-medium is-link has-background-grey has-text-light is-mobile">
           <div style={{textAlign:"center"}} class="hero-body">
@@ -58,7 +58,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
           
                       <p>Option 1 - CODE</p>
                       <p>Option 2 - BAR</p>
-                     <p>Correct answer would be BAR. Reason being that you could make a sentence with this words; I will STOP at the SHOP to get WATER. Replace SHOP with BAR and the sentence is still valid. The association amongst the words in this case is <em>CONTEXTUAL</em></p>
+                     <p>Correct answer would be BAR. Reason being that you could make a sentence with this words; I will STOP at the SHOP to get WATER. Replace SHOP with BAR and the sentence is still valid. The association amongst the words in this case is <strong><em>CONTEXTUAL</em></strong></p>
                      <br/>
                      <p>Try to get as many questions right as possible to climb the leaderboard!</p>
                   </p>
@@ -70,15 +70,15 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
             )}
         </section>
 
-    {/* Icon for Game rules  */}
+    {/* Toggle Icon for Game rules  */}
         <span style={{position: "fixed",top: 0,right: 0, padding:5, margin:5, color:"white"}}>
 
-            <button onClick={toggleModal}  style={{ color: "black", border: "none", padding: "10px", borderRadius: "20px", cursor: "pointer"}}><span>
-              <Icon path={mdiInformation} size={2} />
+            <button className='is-responsive' onClick={toggleModal}  style={{ color: "black", border: "none", padding: "10px", borderRadius: "20px", cursor: "pointer"}}><span>
+              <Icon path={mdiInformation} size={1} />
               </span></button>
             
         </span>
-
+        {/*Form for user input*/}
         <form className="form">
           <div className = "">
 
@@ -146,7 +146,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
             </div>
 
         </form>
-        </div>
+        </section>
     )
 
 }
