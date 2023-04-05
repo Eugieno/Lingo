@@ -103,6 +103,18 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                     </div>
                 </div>
                 </div>
+
+                <div class="control">
+                <p className='label'>Do you want a timed Quiz?</p>
+                  <label class="radio">
+                    <input onChange={onTimerOption} type="radio" name="time-option" value={"true"}/>
+                    Yes
+                  </label>
+                  <label class="radio">
+                    <input onChange={onTimerOption} type="radio" name="time-option" value= {"false"} checked/>
+                    No
+                  </label>
+                </div>
                 
                 <div class="field">
                 <label class="label">Select difficulty level</label>
@@ -123,18 +135,7 @@ function GameSettings ({testType, difficulty, numOfQuestion, onFormFieldChange, 
                 </div>
             </div>
 
-
-            {/* <div class="control">
-            <p>Do you want a timed Quiz?</p>
-              <label class="radio">
-                <input onChange={onTimerOption} type="radio" name="time-option" value={true}/>
-                Yes
-              </label>
-              <label class="radio">
-                <input onChange={onTimerOption} type="radio" name="time-option" value= {false}/>
-                No
-              </label>
-            </div> */}
+            
 
             <div style={{display:"flex", justifyContent:"center", alignItems: "center"}} class="field is-grouped">
               <div class="control">

@@ -5,7 +5,7 @@ import "./renderQ.css";
 
 export const ThemeContext = createContext(null);
 
-export default function RenderQuestions ({diff, testArea, objResponse,timed}) {
+export default function RenderQuestions ({ objResponse,isTimed, difficulty}) {
     const [theme, setTheme] = useState("light");
     
     const toggleTheme = ()=> {
@@ -16,7 +16,7 @@ export default function RenderQuestions ({diff, testArea, objResponse,timed}) {
         <ThemeContext.Provider value={{theme, toggleTheme}}>
             <div id={theme}>
                 
-                <TimelessQuiz objResponse={objResponse} theme={theme} toggleTheme={toggleTheme} />
+                <TimelessQuiz objResponse={objResponse} isTimed={isTimed} theme={theme} toggleTheme={toggleTheme} difficulty={difficulty} />
                 {/* {timed? <TimeBoundQuiz resObject={questionBank} />:<TimelessQUiz resObject={questionBank}/>} */}
             </div>
         </ThemeContext.Provider>

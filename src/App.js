@@ -10,18 +10,17 @@ const App = () => {
 //  Monitoring variables from the game settings
   const [formData, setFormData] = useState({
     testType: "overall",
-    difficulty: 1,
+    difficulty: "1",
     numOfQuestion: ""
   });
   // To manage API object returned 
   const [objResponse, setObjResponse] = useState([]);
   
   // To manage user's choice of test (timed or not timed)
-  const [isTimed, setIsTimed] = useState(true);
+  const [isTimed, setIsTimed] = useState("false");
 
 console.log(formData.difficulty)
 console.log(formData.testType)
-
 
 // Updates the formdata on this App component
  const handleFormFieldChange = (e) => {
@@ -94,7 +93,7 @@ console.log(formData.testType)
         <>
         <Routes>
           <Route path= "/" element={<GameSettings onQuizStart={handleStartQuiz} onFormFieldChange={handleFormFieldChange} onTimerOption={handleTimerUpdate}/>}/>
-          <Route path = "questions" element={<RenderQuestions objResponse={objResponse} timed={isTimed} diff= {formData.difficulty} testArea={formData.testType} />}/>
+          <Route path = "questions" element={<RenderQuestions objResponse={objResponse} isTimed={isTimed} difficulty={formData.difficulty}/>}/>
         </Routes>
         </>
         </Router>
