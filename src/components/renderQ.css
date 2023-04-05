@@ -60,6 +60,7 @@
 
 .quiz-options-ul {
     list-style: none;
+  
 }
 
 .quiz-option-li {
@@ -69,6 +70,7 @@
     border-radius: 20px;
     font-size: 20px;
     margin-top: 8px;
+    
 }
 
 .quiz-option-li:hover {
