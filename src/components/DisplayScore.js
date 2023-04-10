@@ -51,7 +51,7 @@ return (
             <button style={{marginRight:20}} onClick={onClick} className="restart-game is-responsive">Save to scoreboard</button>
             <div style={{margin:15}}>
             <label ><strong><em >Enter your name: </em></strong></label>
-                <input value ={userName}className="name-entry is-rounded" onChange={(e)=> updateUserName(e.target.value)} placeholder="Name"></input>
+                <input value ={userName}className="name-entry input is-rounded" onChange={(e)=> updateUserName(e.target.value)} placeholder="Name"></input>
             </div>
         </section>
         }
